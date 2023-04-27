@@ -1,5 +1,14 @@
 <nav>
   <ul>
+    <% if @current_user.present? %>
+    <!-- logged in -->
+      <li>
+        <a href="/user_sign_out">
+          Sign out
+        </a>
+      </li>
+    <% else %>
+    <!-- not logged in -->
       <li>
         <a href="/user_sign_in">
           Sign in
@@ -10,6 +19,8 @@
           Sign up
         </a>
       </li>
+    <% end %>
+<!-- we want to see this all the time -->
     <li>
       <a href="/">
         Home
